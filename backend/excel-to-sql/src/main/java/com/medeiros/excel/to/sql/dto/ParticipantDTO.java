@@ -8,8 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParticipantDTO {
+
     private Integer identification;
     private String name;
     private Integer age;
     private Double average;
+
 }

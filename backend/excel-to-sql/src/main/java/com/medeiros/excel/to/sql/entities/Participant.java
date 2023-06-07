@@ -24,7 +24,7 @@ public class Participant {
     private Integer age;
     private Double average;
 
-    public Participant(ParticipantDTO participantDTO){
+    public Participant(ParticipantDTO participantDTO) {
         identification = participantDTO.getIdentification();
         name = participantDTO.getName();
         age = participantDTO.getAge();
