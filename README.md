@@ -8,11 +8,13 @@ Fazer um API capaz de manipular planilhas excel com o framework Spring que ao re
 
 ### Objetivos
 
-- [ ] Realizar a leitura e extração dos dados do arquivo Excel enviado por e-mail;
-- [ ] Armazenar os dados extraídos em base de dados;
-- [ ] Exibir em uma tabela na tela, os seguintes dados:
-  - [ ] relação dos participantes, contendo o nome, a idade de cada um e a média das notas. Os participantes deverão ser ordenados pela idade crescente;
-
+- [x] Realizar a leitura e extração dos dados do arquivo Excel enviado por e-mail;
+- [x] Armazenar os dados extraídos em base de dados;
+- [ ] Exibir em uma tabela na tela ordenada pela idade dos participantes, com os seguintes dados:
+  1. nome;
+  2. idade;
+  3. média das notas.
+  
 ## Stack utilizada
 
 - Back-end
