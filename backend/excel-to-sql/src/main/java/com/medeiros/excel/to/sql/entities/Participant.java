@@ -8,20 +8,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "tbl_participants")
-public class Participant {
+@Getter @NoArgsConstructor @AllArgsConstructor @Table(name = "tbl_participants") public class Participant {
 
     @Id
     @Setter
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+
+    @Column(nullable = false)
     private Integer identification;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private Integer age;
+
+    @Column(nullable = false)
     private Double average;
 
     public Participant(ParticipantDTO participantDTO) {
