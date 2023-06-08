@@ -3,6 +3,8 @@ package com.medeiros.excel.to.sql.controllers;
 import com.medeiros.excel.to.sql.entities.Participant;
 import com.medeiros.excel.to.sql.service.ParticipantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,8 +26,18 @@ public class ParticipantController {
     }
 
     @GetMapping
-    public List<Participant> getAll(){
-        return participantService.getAllParticipants();
+    public List<Participant> getAll() {
+        return participantService.getAllParticipantsByAge();
+    }
+
+    @GetMapping("/sheet")
+    public HttpEntity<byte[]> downloadFile() {
+
+        byte[] arquivo = participantService.getFile();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Content-Disposition", "attachment;filename=sheet.xlsx");
+
+        return new HttpEntity<>(arquivo, httpHeaders);
     }
 
 }
