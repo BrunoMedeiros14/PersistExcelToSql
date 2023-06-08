@@ -1,5 +1,6 @@
 package com.medeiros.excel.to.sql.controllers;
 
+import com.medeiros.excel.to.sql.dto.ParticipantDTO;
 import com.medeiros.excel.to.sql.entities.Participant;
 import com.medeiros.excel.to.sql.service.ParticipantService;
 import com.medeiros.excel.to.sql.utils.Validator;
@@ -15,29 +16,49 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-@RestController
-@RequestMapping(value = "/api/v1/participants")
-public class ParticipantController {
+@RestController @RequestMapping(value = "/api/v1/participants") public class ParticipantController {
 
     @Autowired
     ParticipantService participantService;
 
     @PostMapping
-    public ResponseEntity<Map<String, String>> saveData(@RequestParam("spreadSheet") MultipartFile file) throws IOException {
+    public ResponseEntity<Map<String, String>> saveParticipant(@RequestBody ParticipantDTO participant) {
+
+        try {
+            participantService.saveParticipant(participant);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest()
+                                 .body(Map.of("message", "Falha ao salvar o participante.", "error:", e.getMessage()));
+        }
+        return ResponseEntity.ok().body(Map.of("message", "Participante salvo com sucesso."));
+
+    }
+
+    @PostMapping("/spreadsheet")
+    public ResponseEntity<Map<String, String>> saveParticipants(@RequestParam("spreadSheet") MultipartFile file) throws IOException {
+
         if (!Validator.spreadSheetValidator(file))
-            throw new IOException("Formato de objeto inválido, favor inserir uma planilha.");
+            return ResponseEntity.badRequest().body(Map.of("message", "Favor inserir uma planilha válida."));
 
         InputStream spreadsheet = file.getInputStream();
-        participantService.saveData(spreadsheet);
-        return ResponseEntity.ok().body(Map.of("message", "Planilha salva com sucesso"));
+
+        try {
+            participantService.saveParticipants(spreadsheet);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest()
+                                 .body(Map.of("message", "Falha ao salvar planilha.", "error:", e.getMessage()));
+        }
+
+        return ResponseEntity.ok().body(Map.of("message", "Planilha salva com sucesso."));
     }
 
     @GetMapping
     public ResponseEntity<List<Participant>> getAll() {
+
         return ResponseEntity.ok().body(participantService.getAllParticipantsByAge());
     }
 
-    @GetMapping("/sheet")
+    @GetMapping("/spreadsheet")
     public HttpEntity<byte[]> downloadFile() {
 
         byte[] arquivo = participantService.getFile();

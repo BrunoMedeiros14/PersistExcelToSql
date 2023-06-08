@@ -15,13 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Service
-public class ParticipantService {
+@Service public class ParticipantService {
 
     @Autowired
     private ParticipantRepository participantRepository;
 
-    public void saveData(InputStream spreadsheet) {
+    public Boolean saveParticipant(ParticipantDTO participantDTO) {
+        participantRepository.save(new Participant(participantDTO));
+        return true;
+    }
+
+    public Boolean saveParticipants(InputStream spreadsheet) {
         List<Participant> participants = new ArrayList<>();
 
         try (Workbook workbook = WorkbookFactory.create(spreadsheet)) {
@@ -29,14 +33,21 @@ public class ParticipantService {
 
             for (Row row : sheet) {
                 if (row.getRowNum() == 0) continue;
-                ParticipantDTO participantDTO = new ParticipantDTO((int) row.getCell(0).getNumericCellValue(), row.getCell(1).getStringCellValue(), (int) row.getCell(2).getNumericCellValue(), row.getCell(3).getNumericCellValue());
+                ParticipantDTO participantDTO = new ParticipantDTO((int) row.getCell(0).getNumericCellValue(),
+                                                                   row.getCell(1).getStringCellValue(),
+                                                                   (int) row.getCell(2).getNumericCellValue(),
+                                                                   row.getCell(3).getNumericCellValue()
+                );
                 participants.add(new Participant(participantDTO));
             }
             participantRepository.saveAll(participants);
 
+            return true;
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     public List<Participant> getAllParticipantsByAge() {
