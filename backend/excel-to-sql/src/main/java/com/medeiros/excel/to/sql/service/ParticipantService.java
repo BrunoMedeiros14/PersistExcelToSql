@@ -8,6 +8,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -37,6 +38,10 @@ public class ParticipantService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Participant> getAllParticipants(){
+        return participantRepository.findAll(Sort.by(Sort.Direction.ASC, "age"));
     }
 
 }
