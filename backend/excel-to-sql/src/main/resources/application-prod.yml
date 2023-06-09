@@ -1,11 +1,11 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost/xlsx_to_sql
-    username: root
-    password: pass
+    url: jdbc:mysql://${SQL_URL:localhost}/xlsx_to_sql
+    username: ${SQL_USERNAME:root}
+    password: ${SQL_PASSWORD:pass}
 
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update

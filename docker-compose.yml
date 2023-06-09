@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  sql:
+    container_name: sql
+    image: mysql:5.6
+    ports:
+      - '3306:3306'
+    volumes:
+      - sql-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=passkey
+      - MYSQL_DATABASE=xlsx_to_sql
+
+  backend:
+    container_name: backend
+    build: ./backend/
+    image: backend
+    ports:
+      - '8080:8080'
+    depends_on:
+      - sql
+
+    environment:
+      - APP_PROFILE=prod
+      - CORS_ORIGINS=*
+      - SQL_URL=sql
+      - SQL_USERNAME=root
+      - SQL_PASSWORD=passkey
+
+  frontend:
+    container_name: frontend
+    build: ./frontend/
+    image: frontend
+    ports:
+      - '4200:80'
+    environment:
+      - NGINX_PORT=80
+      - URL_BACKEND=backend
+
+  myphp_admin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - sql
+    environment:
+      - PMA_HOST=sql
+      - MYSQL_ROOT_PASSWORD=pass
+      - PMA_ARBITRARY=1
+    ports:
+      - 80:80
+
+volumes:
+  sql-data:
