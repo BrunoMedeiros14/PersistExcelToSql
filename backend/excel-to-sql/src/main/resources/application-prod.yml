@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost/xlsx_to_sql
     username: root
-    password: asdf
+    password: pass
 
   jpa:
     show-sql: true
