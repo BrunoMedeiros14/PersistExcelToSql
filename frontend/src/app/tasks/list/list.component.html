@@ -17,23 +17,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>2</td>
-      <td>Bruno</td>
-      <td>22</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Bruno</td>
-      <td>22</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Bruno</td>
-      <td>22</td>
-      <td>80</td>
+    <tr *ngFor="let partcipant of participants">
+      <td>{{ partcipant.identification }}</td>
+      <td>{{ partcipant.name }}</td>
+      <td>{{ partcipant.age }}</td>
+      <td>{{ partcipant.average }}</td>
     </tr>
   </tbody>
 </table>

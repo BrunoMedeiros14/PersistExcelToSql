@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-insert-sheet',
@@ -8,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class InsertSheetComponent {
   imagePath: string = 'assets/images/example.png';
-  urlToUpload: string = 'http://localhost:8080/api/v1/participants/spreadsheet';
+  urlToUpload: string = `${environment.apiUrl}/spreadsheet`;
 
   constructor(private _http: HttpClient) {}
 
