@@ -1,4 +1,4 @@
-<div class="d-flex flex-row-reverse mb-3 gap-3">
+<div class="d-flex flex-wrap flex-row-reverse mb-3 gap-3">
   <button type="button" class="btn btn-success" [routerLink]="['/sheet']">
     Adicionar planilha
   </button>
@@ -18,7 +18,7 @@
       <th>Média</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="participants.length > 0; else onLoad">
     <tr *ngFor="let partcipant of participants">
       <td>{{ partcipant.identification }}</td>
       <td>{{ partcipant.name }}</td>
@@ -26,4 +26,15 @@
       <td>{{ partcipant.average }}</td>
     </tr>
   </tbody>
+
+  <ng-template #onLoad>
+    <tbody>
+      <Tr class="placeholder-glow">
+        <td><span class="placeholder container"></span></td>
+        <td><span class="placeholder container"></span></td>
+        <td><span class="placeholder container"></span></td>
+        <td><span class="placeholder container"></span></td>
+      </Tr>
+    </tbody>
+  </ng-template>
 </table>
