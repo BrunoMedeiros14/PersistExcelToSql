@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/api/v1/participants',
+  apiUrl:
+    'https://aplicationteste.brunodemedeiros14.repl.co/api/v1/participants',
 };

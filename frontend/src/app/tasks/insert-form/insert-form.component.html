@@ -1,15 +1,24 @@
 <div class="w-75 p-3 m-auto">
-  <form>
+  <form (ngSubmit)="onSubmit()" #formTask="ngForm">
     <div class="mb-3">
-      <div class="mb-3">
-        <label for="name" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="name" />
-      </div>
-      <label for="identification" class="form-label">Identificação</label>
+      <label for="name" class="form-label">Nome</label>
       <input
+        [(ngModel)]="participant.name"
         type="text"
         class="form-control"
+        name="name"
+        id="name"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="identification" class="form-label">Identificação</label>
+      <input
+        [(ngModel)]="participant.identification"
+        type="number"
+        class="form-control"
         id="identification"
+        name="identification"
         aria-describedby="idHelp"
       />
       <div id="idHelp" class="form-text">
@@ -20,11 +29,23 @@
     <div class="row mb-3">
       <div class="col">
         <label for="age" class="form-label">Idade</label>
-        <input type="number" class="form-control" id="age" />
+        <input
+          [(ngModel)]="participant.age"
+          type="number"
+          class="form-control"
+          id="age"
+          name="age"
+        />
       </div>
       <div class="col">
         <label for="average" class="form-label">Média</label>
-        <input type="number" class="form-control" id="average" />
+        <input
+          [(ngModel)]="participant.average"
+          type="number"
+          class="form-control"
+          id="average"
+          name="average"
+        />
       </div>
     </div>
     <button type="submit" class="btn btn-secondary" [routerLink]="['/']">

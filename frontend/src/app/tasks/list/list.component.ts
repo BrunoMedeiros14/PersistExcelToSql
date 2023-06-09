@@ -1,6 +1,7 @@
 import { Participant } from './../shared/participant';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent {
-  urlToUpload: string = 'http://localhost:8080/api/v1/participants';
+  urlToUpload: string = `${environment.apiUrl}`;
   participants: Participant[] = [];
 
   constructor(private _http: HttpClient) {}
@@ -18,5 +19,21 @@ export class ListComponent {
       next: (data: any) => (this.participants = data),
       error: (data: any) => console.log(data),
     });
+  }
+
+  getFile() {
+    this._http
+      .get(`${this.urlToUpload}/spreadsheet`, { responseType: 'blob' })
+      .subscribe({
+        next: (sheet: any) => {
+          const url = window.URL.createObjectURL(sheet);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = 'planilha.xlsx';
+          link.click();
+          window.URL.revokeObjectURL(url);
+        },
+        error: (data) => console.log(data),
+      });
   }
 }
