@@ -8,7 +8,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter @NoArgsConstructor @AllArgsConstructor @Table(name = "tbl_participants") public class Participant {
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "tbl_participants")
+public class Participant {
 
     @Id
     @Setter

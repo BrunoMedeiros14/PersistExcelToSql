@@ -16,7 +16,9 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-@RestController @RequestMapping(value = "/api/v1/participants") public class ParticipantController {
+@RestController
+@RequestMapping(value = "/api/v1/participants")
+public class ParticipantController {
 
     @Autowired
     ParticipantService participantService;
