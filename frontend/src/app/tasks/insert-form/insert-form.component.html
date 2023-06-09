@@ -1,2 +1,35 @@
-<p>insert-form works!</p>
-<h1>oi mano</h1>
+<div class="w-75 p-3 m-auto">
+  <form>
+    <div class="mb-3">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="name" />
+      </div>
+      <label for="identification" class="form-label">Identificação</label>
+      <input
+        type="text"
+        class="form-control"
+        id="identification"
+        aria-describedby="idHelp"
+      />
+      <div id="idHelp" class="form-text">
+        Insira aqui o número de identificação do candidato
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col">
+        <label for="age" class="form-label">Idade</label>
+        <input type="number" class="form-control" id="age" />
+      </div>
+      <div class="col">
+        <label for="average" class="form-label">Média</label>
+        <input type="number" class="form-control" id="average" />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secondary" [routerLink]="['/']">
+      Voltar
+    </button>
+    <button type="submit" class="btn btn-success ms-3">Inserir</button>
+  </form>
+</div>

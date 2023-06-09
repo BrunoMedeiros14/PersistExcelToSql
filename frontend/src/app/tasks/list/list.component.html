@@ -1,1 +1,39 @@
-<p>list works!</p>
+<div class="d-flex flex-row-reverse mb-3 gap-3">
+  <button type="button" class="btn btn-success" [routerLink]="['/sheet']">
+    Adicionar planilha
+  </button>
+  <button type="button" class="btn btn-primary" [routerLink]="['/form']">
+    Adicionar participante
+  </button>
+  <button type="button" class="btn btn-secondary">Baixar planilha</button>
+</div>
+<table class="table table-striped table-hover m-0">
+  <thead class="table-dark">
+    <tr>
+      <th>Identificação</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Média</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Bruno</td>
+      <td>22</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Bruno</td>
+      <td>22</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Bruno</td>
+      <td>22</td>
+      <td>80</td>
+    </tr>
+  </tbody>
+</table>

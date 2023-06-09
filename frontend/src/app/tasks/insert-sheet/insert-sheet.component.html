@@ -1,1 +1,21 @@
-<p>insert-sheet works!</p>
+<div class="w-75 pb-3 m-auto">
+  Favor inserir apenas arquivo no formato .xlsx com uma
+  <strong>data</strong> dados e informações conforme a imagem abaixo:
+
+  <img [src]="imagePath" alt="exemplo" class="w-100s p-5" />
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="upButton">Upload</label>
+    <input
+      (change)="selectFile($event)"
+      type="file"
+      class="form-control"
+      id="upButton"
+    />
+  </div>
+  <button type="submit" class="btn btn-secondary" [routerLink]="['/']">
+    Voltar
+  </button>
+  <button (click)="uploadFile()" type="submit" class="btn btn-success ms-3">
+    Inserir
+  </button>
+</div>
