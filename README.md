@@ -25,4 +25,17 @@ os dados dessa planilha e salvar em um banco de dados SQL.
   - JPA
   - MySql
 - Front-end
-  - Java
+  - Nodejs
+  - Angular
+  - Typescript
+
+Veja como executar o back-end [aqui](./backend/README.md)
+Veja como executar o front-end [aqui](./frontend/README.md)
+
+---
+
+## Desenvolvido por
+
+[<img width="100px" src="https://avatars.githubusercontent.com/u/100999610" />](https://github.com/BrunoMedeiros14 'Perfil no GitHub (BrunoMedeiros)')
+
+<p align="center">By <strong><a href="https://github.com/BrunoMedeiros14">Bruno Medeiros</a></strong>.</p>

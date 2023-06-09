@@ -1,27 +1,24 @@
-# Frontend
+# Front-end
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+Aplicação criada usando Angular:
 
-## Development server
+[<img width="700px" src="./assets/website.png" />](./assets/website.png "Imagem da página")
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Ececutando a aplicação
 
-## Code scaffolding
+Com o node instalado, Execute o comando `npm i` dentro da pasta [frontend](/frontend/).
+Após o término da instalação das dependências, executar o comando `npm start`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Em ambiente de desenvolvimento, a aplicação manterá contato com o link **http://localhost:8080/api/v1/participants**, no qual é fornecido pelo backend.
 
-## Build
+A aplicação ficará rodando no `localhost:4200`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Desenvolvido por
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[<img width="100px" src="https://avatars.githubusercontent.com/u/100999610" />](https://github.com/BrunoMedeiros14 "Perfil no GitHub (BrunoMedeiros)")
 
-## Running end-to-end tests
+**[Retornar para página anterior](../README.md)**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<p align="center">By <strong><a href="https://github.com/BrunoMedeiros14">Bruno Medeiros</a></strong>.</p>
