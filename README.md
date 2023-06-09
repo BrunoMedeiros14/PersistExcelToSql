@@ -30,7 +30,14 @@ os dados dessa planilha e salvar em um banco de dados SQL.
   - Typescript
 
 Veja como executar o back-end [aqui](./backend/README.md)
+
 Veja como executar o front-end [aqui](./frontend/README.md)
+
+## Extra
+
+Foi adicionado no projeto arquivos **Dockerfile** e na raiz o **docker-compose.yml** para adicionar a compatibilidade com docker ao projeto.
+
+Para executar o projeto com o docker, basta ter o _Docker_ e _Docker compose_ intalado e executar o comando `docker-compose up` no terminal.
 
 ---
 
