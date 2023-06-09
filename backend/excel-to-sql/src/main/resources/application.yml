@@ -1,4 +1,7 @@
 spring:
   profiles:
     active:
-      - ${APP_PROFILE:lite}
+      - ${APP_PROFILE:test}
+
+cors:
+  origins: ${CORS_ORIGINS:http://localhost:4200,http://localhost:3000}
