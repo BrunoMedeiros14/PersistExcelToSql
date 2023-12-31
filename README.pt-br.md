@@ -16,11 +16,9 @@
   <img src="https://img.shields.io/static/v1?label=ExcelToSql&message=v1.0.0&color=00F" alt="ExcelToSql" />
 </p>
 
-A full-stack project developed to solve a code challenge.
+Um projeto full-stack desenvolvido para solucionar desafio de código.
 
-[click here](./README.pt-br.md) to see the documentation in Portuguese :brazil:
-
-## Technologies
+## Tecnologias
 
 - Back-end
   - [Java](https://www.java.com/)
@@ -42,34 +40,34 @@ A full-stack project developed to solve a code challenge.
   - [Docker](https://docs.docker.com/)
   - [Docker Compose](https://docs.docker.com/compose/)
 
-## Application Proposal
+## Atividade proposta
 
-Make an API capable of manipulating Excel spreadsheets with the Spring framework that, when it receives a spreadsheet, is capable of extracting data from that spreadsheet and save it in an SQL database.
+Fazer um API capaz de manipular planilhas excel com o framework Spring que ao receber um planilha, seja capaz de extrair os dados dessa planilha e salvar em um banco de dados SQL.
 
-### Objectives
+### Objetivos
 
-- [x] Read and extract the data from the Excel file sent by e-mail;
-- [x] Store the extracted data in a database;
-- [x] Display in an on-screen table, sorted by the age of the participants, with the following data:
-  1. name;
-  2. age;
-  3. average grade.
-- [x] Export Excel report with the data from the database.
+- [x] Realizar a leitura e extração dos dados do arquivo Excel enviado por e-mail;
+- [x] Armazenar os dados extraídos em base de dados;
+- [x] Exibir em uma tabela na tela ordenada pela idade dos participantes, com os seguintes dados:
+  1. nome;
+  2. idade;
+  3. média das notas.
+- [x] Exportar relatório Excel com os dados do banco de dados.
 
-Here's how to run the back-end [aqui](./backend/README.md)
+Veja como executar o back-end [aqui](./backend/README.pt-br.md)
 
-Here's how to run the front-end [aqui](./frontend/README.md)
+Veja como executar o front-end [aqui](./frontend/README.pt-br.md)
 
 ## Extra
 
-**Dockerfile** files have been added to the project, along with the **docker-compose.yml** file in the root, to add Docker compatibility to the project.
+Foi adicionado no projeto arquivos **Dockerfile** e na raiz o **docker-compose.yml** para adicionar a compatibilidade com docker ao projeto.
 
-To run the project with Docker, simply have both _Docker_ and _Docker Compose_ installed, and execute the command `docker-compose up` in the terminal.
+Para executar o projeto com o docker, basta ter o _Docker_ e _Docker compose_ intalado e executar o comando `docker-compose up` no terminal.
 
 ---
 
-## Developed by
+## Desenvolvido por
 
-[<img width="100px" src="https://avatars.githubusercontent.com/u/100999610" alt="Profile picture"/>](https://github.com/BrunoMedeiros14 'Profile on GitHub (BrunoMedeiros)')
+[<img width="100px" src="https://avatars.githubusercontent.com/u/100999610" alt="Foto de perfil"/>](https://github.com/BrunoMedeiros14 'Perfil no GitHub (BrunoMedeiros)')
 
 <p align="center">By <strong><a href="https://github.com/BrunoMedeiros14">Bruno Medeiros</a></strong>.</p>

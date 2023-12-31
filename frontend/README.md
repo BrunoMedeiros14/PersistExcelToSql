@@ -1,24 +1,22 @@
 # Front-end
 
-Aplicação criada usando Angular:
+Application made using Angular:
 
 [<img width="700px" src="./assets/website.png" />](./assets/website.png "Imagem da página")
 
-## Ececutando a aplicação
+## Executing the application
 
-Com o node instalado, Execute o comando `npm i` dentro da pasta [frontend](/frontend/).
-Após o término da instalação das dependências, executar o comando `npm start`.
+With nodejs installed, execute the command `npm i` inside the folder [frontend](/frontend/).
+Before the end of instalation of dependencies, execute the command `npm start`.
 
-Em ambiente de desenvolvimento, a aplicação manterá contato com o link **http://localhost:8080/api/v1/participants**, no qual é fornecido pelo backend.
+In the development environment, the application will communicate with the link **http://localhost:8080/api/v1/participants**, provided by the backend.
 
-A aplicação ficará rodando no `localhost:4200`
+The application will be running on `localhost:4200`
 
----
+## Developed by
 
-## Desenvolvido por
+[<img width="100px" src="https://avatars.githubusercontent.com/u/100999610" alt="Profile picture"/>](https://github.com/BrunoMedeiros14 "Profile on GitHub (BrunoMedeiros)")
 
-[<img width="100px" src="https://avatars.githubusercontent.com/u/100999610" />](https://github.com/BrunoMedeiros14 "Perfil no GitHub (BrunoMedeiros)")
-
-**[Retornar para página anterior](../README.md)**
+**[Return to previous page](../README.md)**
 
 <p align="center">By <strong><a href="https://github.com/BrunoMedeiros14">Bruno Medeiros</a></strong>.</p>
